@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Sample Action Set"
+            visible="true"
+            id="ch.unibe.iam.scg.fontsizebuttons.actionSet">
+         <action
+               label="&amp;-"
+               icon="icons/sample.gif"
+               class="ch.unibe.iam.scg.fontsizebuttons.actions.IncreaseFontSize"
+               tooltip="Increase font size."
+               toolbarPath="fontSizeGroup"
+               id="ch.unibe.iam.scg.fontsizebuttons.actions.IncreaseFontSize">
+         </action>
+         <action
+               label="&amp;+"
+               icon="icons/sample.gif"
+               class="ch.unibe.iam.scg.fontsizebuttons.actions.DecreaseFontSize"
+               tooltip="Decrease font size."
+               toolbarPath="fontSizeGroup"
+               id="ch.unibe.iam.scg.fontsizebuttons.actions.DecreaseFontSize">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>
