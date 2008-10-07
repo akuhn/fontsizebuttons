@@ -5,22 +5,22 @@
    <extension
          point="org.eclipse.ui.actionSets">
       <actionSet
-            label="Sample Action Set"
+            label="Change Font Size"
             visible="true"
             id="ch.unibe.iam.scg.fontsizebuttons.actionSet">
          <action
-               label="&amp;-"
-               icon="icons/sample.gif"
                class="ch.unibe.iam.scg.fontsizebuttons.actions.IncreaseFontSize"
-               tooltip="Increase font size."
+               icon="icons/larger.gif"
+               id="ch.unibe.iam.scg.fontsizebuttons.actions.IncreaseFontSize"
+               label="&amp;Larger Font"
                toolbarPath="fontSizeGroup"
-               id="ch.unibe.iam.scg.fontsizebuttons.actions.IncreaseFontSize">
+               tooltip="Larger font.">
          </action>
          <action
-               label="&amp;+"
-               icon="icons/sample.gif"
+               label="&amp;Smaller Font"
+               icon="icons/smaller.gif"
                class="ch.unibe.iam.scg.fontsizebuttons.actions.DecreaseFontSize"
-               tooltip="Decrease font size."
+               tooltip="Smaller Font"
                toolbarPath="fontSizeGroup"
                id="ch.unibe.iam.scg.fontsizebuttons.actions.DecreaseFontSize">
          </action>
