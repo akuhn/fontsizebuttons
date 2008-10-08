@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: FontSizeButtons Plug-in
 Bundle-SymbolicName: ch.unibe.iam.scg.fontsizebuttons; singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
