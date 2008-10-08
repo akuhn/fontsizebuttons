@@ -28,20 +28,25 @@ public abstract class ChangeFontSize implements IWorkbenchWindowActionDelegate {
 	}
 	
 	public void run() throws Exception {
-		IPreferencesService r = Platform.getPreferencesService();
-		String value = r.getString("org.eclipse.ui.workbench",
-		        "org.eclipse.jface.textfont", 
-		        null, null);
-		if (value == null) throw new AssertionError();
-		FontData[] ary = PreferenceConverter.basicGetFontData(value);
-		if (ary == null) throw new AssertionError();
-		if (ary.length < 1) throw new AssertionError();
+        changeFont("org.eclipse.ui.workbench", "org.eclipse.jdt.ui.editors.textfont");
+        // JFace text font must be last, since others might default to it 
+	    changeFont("org.eclipse.ui.workbench", "org.eclipse.jface.textfont");
+    }
+	
+    private void changeFont(String qualifier, String key) throws Exception {
+        IPreferencesService r = Platform.getPreferencesService();
+        //debugPreferencesService(r);
+        String value = r.getString(qualifier,key,null,null);
+        if (value == null) throw new AssertionError();
+        FontData[] ary = PreferenceConverter.basicGetFontData(value);
+        if (ary == null) throw new AssertionError();
+        if (ary.length < 1) throw new AssertionError();
         FontData fontdata = ary[0];
-		fontdata.setHeight(changeFontSize(fontdata.getHeight()));
-        Preferences n = r.getRootNode().node("/instance/org.eclipse.ui.workbench");
-		n.put("org.eclipse.jface.textfont", fontdata.toString());
-		n.flush();
-	}
+        fontdata.setHeight(changeFontSize(fontdata.getHeight()));
+        Preferences n = r.getRootNode().node("/instance/" + qualifier);
+        n.put(key, fontdata.toString());
+        n.flush();
+    }	
 	
 	protected void debugPreferencesService(IPreferencesService r) throws Exception {
 	    OutputStream baos = new ByteArrayOutputStream();
