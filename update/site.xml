@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/ch.unibe.iam.scg.fontsizebuttons.feature_1.0.1.jar" id="ch.unibe.iam.scg.fontsizebuttons.feature" version="1.0.1">
+      <category name="FontSizeButtons"/>
+   </feature>
+   <category-def label="FontSizeButtons" name="FontSizeButtons">
+      <description>
+         A single-click in the toolbar to change the font size in Eclipse. It has been done!
+      </description>
+   </category-def>
+</site>

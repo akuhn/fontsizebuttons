@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<project default="package" basedir="..">
+	
+	<target name="package">
+		<delete file="update/update.zip"/>
+		<mkdir dir=".tmp"/>
+		<mkdir dir=".tmp/features"/>
+        <mkdir dir=".tmp/plugins"/>
+		<zip destfile=".tmp/features/ch.unibe.iam.scg.fontsizebuttons.feature_1.0.1.jar" basedir=".">
+			<include name="update/feature.xml"/>
+		</zip>
+        <zip destfile=".tmp/plugins/ch.unibe.iam.scg.fontsizebuttons_1.0.1.jar" basedir=".">
+            <fileset dir="bin" includes="**/*.class"/>
+        	<include name="META-INF/MANIFEST.MF"/>
+        	<include name="icons/**"/>
+        	<include name="plugin.xml"/>
+        </zip>
+		<zip destfile="update/update.zip">
+            <fileset dir="update" includes="site.xml"/>
+			<fileset dir=".tmp" includes="**"/>
+		</zip>
+	    <delete dir=".tmp"/>
+	</target>
+	
+</project>
